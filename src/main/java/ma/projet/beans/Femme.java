@@ -18,6 +18,6 @@ import java.util.List;
         )
 })
 public class Femme extends Personne{
-    @OneToMany(mappedBy = "femme", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "femme", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Mariage> mariages;
 }

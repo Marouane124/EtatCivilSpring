@@ -15,6 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Homme extends Personne{
-    @OneToMany(mappedBy = "homme", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "homme", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Mariage> mariages;
 }

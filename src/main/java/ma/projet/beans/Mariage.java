@@ -11,6 +11,12 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedQueries({
+        @NamedQuery(
+                name = "Mariage.countEnfantsByFemmeAndDates",
+                query = "SELECT SUM(m.nbrEnfant) FROM Mariage m WHERE m.femme.id = :femmeId AND m.dateDebut BETWEEN :startDate AND :endDate"
+        )
+})
 public class Mariage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
